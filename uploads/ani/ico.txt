@@ -1,0 +1,6 @@
+
+.body {
+cursor: url(/uploads/ani/huaji.png), default;
+}
+/** 链接指针样式**/
+a:hover{cursor:url(/uploads/ani/yinxian.png), pointer;}
