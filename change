@@ -1,0 +1,26 @@
+1.修改头部背景色彩
+C:\next\themes\next\source\css\_schemes\Mist\_header.styl
+找到.header { background: $whitesmoke; }
+把$whitesmoke改为'rgb(245, 245, 213)'
+
+2.修改底部背景色彩
+C:\next\themes\next\source\css\_schemes\Mist\index.styl
+找到.footer
+把$whitesmoke改为'rgb(245, 245, 213)'
+
+3.更改标签云（tagcloud）的颜色
+C:\next\themes\next\layout\page.swig
+38行
+
+4.修改默认中文字体
+C:\next\themes\next\source\css\_variables\base.styl
+65行
+
+5.修改顶部的文字样式
+C:\next\themes\next\source\css\_custom\custom.styl
+13行
+
+
+6.自定义样式数字块
+C:\next\themes\next\source\css\_custom\custom.styl
+24行

@@ -3,12 +3,12 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
+title: 个人博客
 subtitle:
-description:
+description: 白天是理想，晚上是现实
 keywords:
-author: John Doe
-language:
+author: 张成林
+language: zh-Hans
 timezone:
 
 # URL
@@ -41,7 +41,8 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
+# 代码自动高亮
+  auto_detect: true
   tab_replace:
 
 # Home page setting
@@ -64,6 +65,47 @@ tag_map:
 ## http://momentjs.com/docs/#/displaying/format/
 date_format: YYYY-MM-DD
 time_format: HH:mm:ss
+
+#豆瓣插件
+douban:
+  user: 160904585
+  builtin: false
+  book:
+    title: '读书'
+    #quote: ''
+  movie:
+    title: '电影'
+    #quote: ''
+  timeout: 10000
+
+# 代码压缩 github.com/chenzhutian/hexo-all-minifier
+all_minifier: true
+
+html_minifier:
+  enable: true
+  ignore_error: false
+  exclude:
+
+css_minifier:
+  enable: true
+  exclude:
+    - '*.min.css'
+
+js_minifier:
+  enable: true
+  mangle: true
+  output:
+  compress:
+  exclude:
+    - '*.min.js'
+
+image_minifier:
+  enable: false # 图片不压缩
+  interlaced: false
+  multipass: false
+  optimizationLevel: 2
+  pngquant: false
+  progressive: false
 
 # Pagination
 ## Set per_page to 0 to disable pagination

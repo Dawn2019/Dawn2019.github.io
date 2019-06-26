@@ -1,6 +1,7 @@
 title:
   archive: 归档
   category: 分类
+  categories: 分类
   tag: 标签
   schedule: 日程表
 
@@ -13,6 +14,9 @@ menu:
   tags: 标签
   about: 关于
   search: 搜索
+  books: 阅读
+  movies: 电影
+  musics: 音乐
   schedule: 日程表
   sitemap: 站点地图
   commonweal: 公益404
@@ -90,9 +94,9 @@ symbol:
   colon: '：'
 
 reward:
-  donate: 打赏
+  donate: 领红包
   wechatpay: 微信支付
-  alipay: 支付宝
+  alipay: 世上无难事，只怕有钱人
   bitcoin: 比特币
 
 gitmentbutton: 显示 Gitment 评论

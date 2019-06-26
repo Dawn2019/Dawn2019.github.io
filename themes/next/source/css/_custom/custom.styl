@@ -1,1 +1,32 @@
 // Custom styles.
+// 加深字体颜色
+.post-body {
+    color: #000;
+}
+
+// 首页阅读全文样式
+.post-button {
+    margin-top: 30px;
+    text-align: center;
+}
+.post-button .btn {
+    color: #fff;
+    font-size: 15px;
+    background: #8FBC8F;
+    border-radius: 16px;
+    line-height: 2;
+    margin: 0 4px 8px 4px;
+    padding: 0 20px;
+}
+.post-button a{
+  border-bottom: 1px solid #666;
+}
+.post-button a:hover {
+    color: #7784ba;
+}
+
+// 时间轴左边线条
+.posts-collapse::after {
+    margin-left: -2px;
+    background-image: linear-gradient(180deg,#f79533 0,#f37055 15%,#ef4e7b 30%,#a166ab 44%,#5073b8 58%,#1098ad 72%,#07b39b 86%,#6dba82 100%);
+}

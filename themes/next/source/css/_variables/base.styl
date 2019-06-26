@@ -43,11 +43,11 @@ $link-decoration-hover-color  = $black-deep
 $border-color                 = $grey-light
 
 // Background color for <body>
-$body-bg-color                = white
+$body-bg-color                = #f5f5d5;
 
 // Selection
 $selection-bg                 = $blue-deep
-$selection-color              = white
+$selection-color              = #f5f5d5;
 
 
 
@@ -62,6 +62,27 @@ get_font_family(config) {
 }
 
 // Font families.
+$font-family-chinese      = "Noto Serif SC"
+
+/*-apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Heiti SC", "STHeiti", "Source Han Sans SC", "Noto Sans CJK SC", "WenQuanYi Micro Hei", "Droid Sans Fallback", "Microsoft YaHei"
+*/
+
+$font-family-base         = $font-family-chinese, sans-serif
+$font-family-base         = get_font_family('global'), $font-family-chinese, sans-serif if get_font_family('global')
+
+$font-family-logo         = $font-family-base
+$font-family-logo         = get_font_family('logo'), $font-family-base if get_font_family('logo')
+
+$font-family-headings     = $font-family-base
+$font-family-headings     = get_font_family('headings'), $font-family-base if get_font_family('headings')
+
+$font-family-posts        = $font-family-base
+$font-family-posts        = get_font_family('posts'), $font-family-base if get_font_family('posts')
+
+$font-family-monospace    = $font-family-chinese, monospace
+$font-family-monospace    = Menlo, Monaco, Consolas, get_font_family('codes'), $font-family-chinese, monospace if get_font_family('codes')
+
+/* 原来默认
 $font-family-chinese      = "PingFang SC", "Microsoft YaHei"
 
 $font-family-base         = $font-family-chinese, sans-serif
@@ -78,6 +99,7 @@ $font-family-posts        = get_font_family('posts'), $font-family-base if get_f
 
 $font-family-monospace    = consolas, Menlo, $font-family-chinese, monospace
 $font-family-monospace    = get_font_family('codes'), consolas, Menlo, $font-family-chinese, monospace if get_font_family('codes')
+*/
 
 $font-family-icons        = 'FontAwesome'
 
@@ -91,7 +113,7 @@ $font-weight-bolder       = 700
 
 
 // Font size
-$font-size-base           = 14px
+$font-size-base           = 16px
 $font-size-base           = unit(hexo-config('font.global.size'), px) if hexo-config('font.global.size') is a 'unit'
 $font-size-small          = $font-size-base - 2px
 $font-size-smaller        = $font-size-base - 4px
@@ -101,7 +123,7 @@ $font-size-larger         = $font-size-base + 4px
 
 // Headings font size
 $font-size-headings-step    = 2px
-$font-size-headings-base    = 24px
+$font-size-headings-base    = 22px
 $font-size-headings-base    = unit(hexo-config('font.headings.size'), px) if hexo-config('font.headings.size') is a 'unit'
 $font-size-headings-small   = $font-size-headings-base - $font-size-headings-step
 $font-size-headings-smaller = $font-size-headings-small - $font-size-headings-step
@@ -129,7 +151,7 @@ $zindex-5       = 1050
 // --------------------------------------------------
 $table-width                    = 100%
 $table-border-color             = $gray-lighter
-$table-font-size                = 14px
+$table-font-size                = 15px
 $table-content-alignment        = left
 $table-content-vertical         = middle
 $table-th-font-weight           = 700
@@ -144,7 +166,7 @@ $table-row-hover-bg-color       = $whitesmoke
 // Code & Code Blocks
 // --------------------------------------------------
 $code-font-family               = $font-family-monospace
-$code-font-size                 = 13px
+$code-font-size                 = 14px
 $code-font-size                 = unit(hexo-config('font.codes.size'), px) if hexo-config('font.codes.size') is a 'unit'
 $code-border-radius             = 3px
 $code-foreground                = $black-light
