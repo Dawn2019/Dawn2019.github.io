@@ -24,3 +24,9 @@ C:\next\themes\next\source\css\_custom\custom.styl
 6.自定义样式数字块
 C:\next\themes\next\source\css\_custom\custom.styl
 24行
+
+7.修改文章字体
+替换C:\next\themes\next\layout\_partials\head\external-fonts.swig第48行
+/*
+<link href="{{ font_host }}/css?family={{ font_families }}" rel="stylesheet" type="text/css">
+*/
