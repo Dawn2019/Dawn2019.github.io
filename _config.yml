@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 个人博客
+title: Dawn
 subtitle:
 description: 白天是理想，晚上是现实
 keywords:
@@ -13,10 +13,10 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
-root: /
+url: http://47.100.110.77/blog
+root: /blog/
 permalink: :year/:month/:day/:title/
-permalink_defaults:
+permalink_deaults:
 
 # Directory
 source_dir: source
@@ -51,7 +51,7 @@ highlight:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  per_page: 10
+  per_page: 5
   order_by: -date
 
 # Category & Tag
