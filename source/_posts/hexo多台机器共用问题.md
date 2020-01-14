@@ -66,7 +66,7 @@ firewall-cmd --state
 systemctl start firewalld.service
 ```
 
-开放 4000端口
+在管理控制台》安全》防火墙 中设置4000端口，或命令行开放 4000端口
 ```
 firewall-cmd --zone=public --add-port=4000/tcp --permanent
 ```
@@ -80,7 +80,6 @@ systemctl restart firewalld.service
 ```
 netstat -ntlp
 ```
-或者在管理控制台》安全》防火墙 中设置4000端口
 
 ### 开始调试
 在使用hexo g、hexo s之后，通过ip+4000即可访问
