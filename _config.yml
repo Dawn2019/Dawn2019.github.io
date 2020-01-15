@@ -13,9 +13,9 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://47.100.110.77/blog
+url: http://zhangchenglin.top/blog
 root: /blog/
-permalink: :year/:month/:day/:title/
+permalink: :title.html
 permalink_deaults:
 
 # Directory
@@ -117,9 +117,15 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: next
 
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
+
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
   repo:
     github: git@github.com:Dawn2019/Dawn2019.github.io.git,master
+
