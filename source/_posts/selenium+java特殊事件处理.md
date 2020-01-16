@@ -1,12 +1,13 @@
 ---
-title: selenium+java特殊事件处理
+title:Selenium + Java 特殊事件处理
 date: 2019-04-20 19:20:39
 comments: true
 toc: true
 categories:
 	- 软件测试
 ---
-*  在使用 selenium + java 编写自动化用例时，除了 click ， sendKeys ，clear 基本事件外，还会经常遇到一些阻碍性问题,这里针对 iframe 事件、切换句柄、错误截图等整理了一些使用方法。
+
+* 在使用 selenium + java 编写自动化用例时，除了 click， sendKeys，clear 基本事件外，还会经常遇到一些阻碍性问题,这里针对 iframe 事件、切换句柄、错误截图等整理了一些使用方法。
 
 	<!--more-->
 
@@ -34,6 +35,7 @@ categories:
 			return dataString;
 		}
 ```
+
 #### 将错误截图的方法进行封装
 
 ```
@@ -80,11 +82,15 @@ categories:
 ```
 driver.switchTo().defaultContent();
 ```
+
 #### 切到第二个iframe中
+
 ```
 driver.switchTo().frame(1); //从下标为0开始，1表示切换到第二个iframe
 ```
+
 #### 将iframe事件封装
+
 ```
 	public static WebElement frame(String value) {
 		if(value != null && value.equals("defaultContent")) {
@@ -97,12 +103,15 @@ driver.switchTo().frame(1); //从下标为0开始，1表示切换到第二个ifr
 ```
 
 ### 鼠标悬停事件
+
 ```
 WebElement moveToElement = driver.findElement(By.xpath("/html/body/div/form/div[2]/button/i"));
 new Actions(driver).moveToElement(moveToElement).perform();
 ```
+
 ### 使用 js 执行器
 #### 添加红色边框
+
 ```
 WebElement user_name = driver.findElement(By.name("user_name")).sendKeys("dawn");
 ((JavascriptExecutor) driver).executeScript(

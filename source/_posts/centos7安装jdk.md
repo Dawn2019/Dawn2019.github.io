@@ -1,13 +1,14 @@
 ---
-title: CentOS7安装JDK
+title: CentOS7 安装 JDK
 date: 2019-04-12 21:10:43
 comments: true
 toc: true
 categories:
 	- 环境搭建
 ---
-   *  根据类的数量的不同有三个版本可以选择： J2SE 、 J2EE 、J2ME ，分别对应着微型版、企业版、标准版，这里以 J2SE 为例。
-  
+
+* 根据类的数量的不同有三个版本可以选择： J2SE 、 J2EE 、J2ME ，分别对应着微型版、企业版、标准版，这里以 J2SE 为例。
+
    <!--more-->
 
 
@@ -63,7 +64,7 @@ vi test.java
 ```
 javac test.java
 ```
-生成.class字节码文件：
+生成 .class 字节码文件：
 ![](/uploads/class.jpg)
 ### 使用 java 命令执行字节码文件：
 ```

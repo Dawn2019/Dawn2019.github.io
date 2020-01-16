@@ -6,40 +6,50 @@ toc: true
 categories:
 	- 软件测试
 ---
-   *  为了充分测试系统中的各个模块，减少人工投入成本，较快的定位错误，可以同过自动化的方式在 API 和 UI 层来进行持续集成。
+
+* 为了充分测试系统中的各个模块，减少人工投入成本，较快的定位错误，可以同过自动化的方式在 API 和 UI 层来进行持续集成。
    
-   *  这里整理了一份针对 API 的自动化测试步骤。
+* 这里整理了一份针对 API 的自动化测试步骤。
    <!--more-->
    
 ---
-在用 jmeter 生成时，调整了生成模板,效果图如下:
+在用 Jmeter 生成时，调整了生成模板,效果图如下
+
 ![](/uploads/201904/xiaoguotuj.png)
 
 
 ### 配置 ant
 #### 安装 ant 配置环境变量
 #### 添加 jar 包
-	将 /apache-jmeter-X.X/extras 目录下的 ant-jmeter-1.1.1.jar 文件拷贝到 ant 安装目录下的 lib 文件夹中
+
+将 /apache-jmeter-X.X/extras 目录下的 ant-jmeter-1.1.1.jar 文件拷贝到 ant 安装目录下的 lib 文件夹中
 
 ---
-### 配置 jmeter
+### 配置 Jmeter
 #### 添加 jar 包
-   	由于要连接数据库使用，执行前记得在测试计划中选中mysql的jar包(cloud-mysql-connector-java-5.1.7-bin.jar)
-也可以把jar包直接放到jmeter中apache-jmeter-X.X\lib\目录下
+
+由于要连接数据库使用，执行前记得在测试计划中选中 mysql 的 jar 包(cloud-mysql-connector-java-5.1.7-bin.jar)
+也可以把 jar 包直接放到 jmeter 中 apache-jmeter-X.X\lib\ 目录下
 #### 添加配置文件
    	在 /apache-jmeter-X.X/extras 目录下添加 jmeter.results.shanhe.me.xsl 文件
 #### 修改配置文件
-	进入/apache-jmeter-3.0/bin/jmeter.properties下：
+
+进入/apache-jmeter-3.0/bin/jmeter.properties 下：
+
 找到
+
 ```
 jmeter.save.saveservice.output_format=csv
 ```
+
 取消注释,改为
+
 ```	
 jmeter.save.saveservice.output_format=xml 
 ```
 
-	同时调整改文件中的其他行配置如下：
+同时调整改文件中的其他行配置如下：
+
 ```
 jmeter.save.saveservice.data_type=true
 jmeter.save.saveservice.label=true
@@ -71,13 +81,14 @@ jmeter.save.saveservice.sample_count=true
 jmeter.save.saveservice.idle_time=true
 ```
 
-### 添加存放测试报告的report文件夹
+### 添加存放测试报告的 report 文件夹
 #### 方案一
+
 可以将 report 文件夹放到 jmeter 工具中，此时的目录结构如下
 ![](/uploads/201904/jreport.png)
 
 #### 方案二(本次使用)
-若要 Jenkins+git 结合使用，也可以将report文件文件在放置在jmx同级目录中此时的目录结构如下
+若要 Jenkins+git 结合使用，也可以将 report 文件文件在放置在jmx同级目录中此时的目录结构如下
 ![](/uploads/201904/greport.png)
 
 ### 配置 build.xml 文件
