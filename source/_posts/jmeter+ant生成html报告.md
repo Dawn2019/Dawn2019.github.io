@@ -1,33 +1,33 @@
 ---
-title: Jmeter+Ant+Jenkins+GitLab持续集成
+title: Jmeter + Ant + Jenkins + GitLab 持续集成
 date: 2019-04-20 16:30:39
 comments: true
 toc: true
 categories:
 	- 软件测试
 ---
-   *  为了充分测试系统中的各个模块，减少人工投入成本，较快的定位错误，可以同过自动化的方式在API和UI层来进行持续集成。
+   *  为了充分测试系统中的各个模块，减少人工投入成本，较快的定位错误，可以同过自动化的方式在 API 和 UI 层来进行持续集成。
    
-   *  这里整理了一份针对API的自动化测试步骤。
+   *  这里整理了一份针对 API 的自动化测试步骤。
    <!--more-->
    
 ---
-在用jmeter生成时，调整了生成模板,效果图如下:
+在用 jmeter 生成时，调整了生成模板,效果图如下:
 ![](/uploads/201904/xiaoguotuj.png)
 
 
-### 配置ant
-#### 安装ant配置环境变量
-#### 添加jar包
-	将/apache-jmeter-X.X/extras目录下的ant-jmeter-1.1.1.jar 文件拷贝到ant安装目录下的lib文件夹中
+### 配置 ant
+#### 安装 ant 配置环境变量
+#### 添加 jar 包
+	将 /apache-jmeter-X.X/extras 目录下的 ant-jmeter-1.1.1.jar 文件拷贝到 ant 安装目录下的 lib 文件夹中
 
 ---
-### 配置jmeter
-#### 添加jar包
+### 配置 jmeter
+#### 添加 jar 包
    	由于要连接数据库使用，执行前记得在测试计划中选中mysql的jar包(cloud-mysql-connector-java-5.1.7-bin.jar)
 也可以把jar包直接放到jmeter中apache-jmeter-X.X\lib\目录下
 #### 添加配置文件
-   	在/apache-jmeter-X.X/extras 目录下添加 jmeter.results.shanhe.me.xsl 文件
+   	在 /apache-jmeter-X.X/extras 目录下添加 jmeter.results.shanhe.me.xsl 文件
 #### 修改配置文件
 	进入/apache-jmeter-3.0/bin/jmeter.properties下：
 找到
@@ -73,14 +73,14 @@ jmeter.save.saveservice.idle_time=true
 
 ### 添加存放测试报告的report文件夹
 #### 方案一
-可以将report文件夹放到jmeter工具中，此时的目录结构如下
+可以将 report 文件夹放到 jmeter 工具中，此时的目录结构如下
 ![](/uploads/201904/jreport.png)
 
 #### 方案二(本次使用)
-若要Jenkins+git结合使用，也可以将report文件文件在放置在jmx同级目录中此时的目录结构如下
+若要 Jenkins+git 结合使用，也可以将report文件文件在放置在jmx同级目录中此时的目录结构如下
 ![](/uploads/201904/greport.png)
 
-### 配置build.xml文件
+### 配置 build.xml 文件
 
 ```
 <?xml version="1.0" encoding="utf-8"?>
@@ -137,11 +137,11 @@ jmeter.save.saveservice.idle_time=true
   </target> 
 </project>
 ```
-### 使用gitlab+Jenkins持续构建
-#### 将项目推送到gitlab中如图
+### 使用 Gitlab+Jenkins 持续构建
+#### 将项目推送到 Gitlab 中如图
 ![](/uploads/201904/xiangmumulu.png)
 #### 配置Jenkins
-##### 添加html报告插件
+##### 添加 HTML 报告插件
 在系统管理》插件管理》可选插件中搜索
 ```
 HTML Publisher plugin
@@ -154,17 +154,17 @@ Ant plugin
 安装
 ![](/uploads/201904/antchajan.png)
 ##### 添加环境变量
-在系统管理》全局工具配置中添加ant、jdk安装路径
+在系统管理》全局工具配置中添加 ant、jdk 安装路径
 ![](/uploads/201904/antjdkpath.png)
 
 ##### 添加自由风格的项目
-配置gitlab链接
+配置 gitlab 链接
 ![](/uploads/201904/githubtuoguan.png)
 
 规定每天六点构建
 ![](/uploads/201904/dingshijob.jpg)
 
-填写要执行的xml文件路径
+填写要执行的 xml 文件路径
 
 ![](/uploads/201904/zhixingdexml.png)
 其中的命令行内容如下
@@ -178,16 +178,16 @@ fi
 cd $WORKSPACE/activity/html
 grep -w "failureMessage" $WORKSPACE/activity/jtl/home-api.jtl && cp home-api.html home-api-error.html && exit 1 || exit 0
 ```
-此时进行构建即可看到对应的html报告
+此时进行构建即可看到对应的 html 报告
 ![](/uploads/201904/goujianhtml.png)
 ![](/uploads/201904/recorhtml.png)
 
-#### 配置Jenkins添加邮件通知
+#### 配置 Jenkins 添加邮件通知
 ##### 添加构建后操作
 ![](/uploads/201904/goujianhoucaozuo.png)
 ![](/uploads/201904/goujianhoumu.png)
 
-##### Default Content配置
+##### Default Content 配置
 ```
 <!DOCTYPE html>
 <html>
@@ -240,4 +240,4 @@ grep -w "failureMessage" $WORKSPACE/activity/jtl/home-api.jtl && cp home-api.htm
 ##### 设置发送邮件规则
 ![](/uploads/201904/shezhiguize.png)
 ## 注意事项：
- *  jmeter高版本兼容低版本，自下向上不兼容。使用4.0版本的工具编写的jmx文件在3.0版本中打开很可能会遇到报错的情况，而3.0版本编写的jmx文件4.0等高版本可以打开。
+ *  jmeter 高版本兼容低版本，自下向上不兼容。使用 4.0 版本的工具编写的 jmx 文件在 3.0 版本中打开很可能会遇到报错的情况，而 3.0 版本编写的 jmx 文件 4.0 等高版本可以打开。
