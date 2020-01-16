@@ -7,7 +7,7 @@ categories:
 	- 软件测试
 ---
 
-* 在使用 selenium + java 编写自动化用例时，除了 click， sendKeys，clear 基本事件外，还会经常遇到一些阻碍性问题,这里针对 iframe 事件、切换句柄、错误截图等整理了一些使用方法。
+* 在使用 selenium + java 编写自动化用例时，除了 click，sendKeys，clear 基本事件外，还会经常遇到一些阻碍性问题,这里针对 iframe 事件、切换句柄、错误截图等整理了一些使用方法。
 
 	<!--more-->
 
@@ -58,9 +58,9 @@ categories:
 #### 跳转到指定句柄
 
 ```
-		Set<String> winHandels=driver.getWindowHandles();// 得到当前窗口的set集合
-        List<String> it = new ArrayList<String>(winHandels); // 将set集合存入list对象
-        driver.switchTo().window(it.get(1));// 从下标为0开始，1表示切换到第2个窗口，以此类推
+		Set<String> winHandels=driver.getWindowHandles();// 得到当前窗口的 set 集合
+        List<String> it = new ArrayList<String>(winHandels); // 将 set 集合存入 list 对象
+        driver.switchTo().window(it.get(1));// 从下标为 0 开始，1 表示切换到第 2 个窗口，以此类推
 ```
 
 #### 将句柄事件封装
@@ -86,7 +86,7 @@ driver.switchTo().defaultContent();
 #### 切到第二个iframe中
 
 ```
-driver.switchTo().frame(1); //从下标为0开始，1表示切换到第二个iframe
+driver.switchTo().frame(1); //从下标为 0 开始，1 表示切换到第二个 iframe
 ```
 
 #### 将iframe事件封装
