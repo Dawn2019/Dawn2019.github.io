@@ -128,5 +128,5 @@ baidusitemap:
 deploy:
   type: git
   repo:
-    github: git@github.com:Dawn2019/Dawn2019.github.io.git,master
+    github: git@github.com:Dawn2019/Dawn2019.github.io.git,hexo
 
